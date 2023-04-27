@@ -99,6 +99,20 @@
           "target": [
             "TargetIdoc_Overview"
           ]
+        },
+        {
+            "pattern": "Products/{objectId}",
+            "name": "idocitems",
+            "target": [
+                "idocitems"
+            ]
+        },
+        {
+            "pattern": "idoc/{}",
+            "name": "idocmassedit",
+            "target": [
+                "idocmassedit"
+            ]
         }
       ],
       "targets": {
@@ -108,6 +122,27 @@
           "clearControlAggregation": false,
           "viewId": "Idoc_Overview",
           "viewName": "Idoc_Overview"
+        },
+        "objectNotFound": {
+            "viewName": "ObjectNotFound",
+            "viewId": "objectNotFound"
+        },
+        "notFound": {
+            "viewId": "notFound",
+            "viewName": "NotFound",
+            "transition": "show"
+        },
+        "idocitems": {
+            "viewName": "Idoc_Items",
+            "viewId": "idocitems",
+            "viewLevel": 2,
+            "title": "{i18n>objectViewTitle}"
+        },
+        "idocmassedit": {
+            "viewType": "XML",
+            "viewId": "idocmassedit",
+            "viewName": "Idoc_MassEdit",
+            "viewLevel": 2
         }
       }
     },
