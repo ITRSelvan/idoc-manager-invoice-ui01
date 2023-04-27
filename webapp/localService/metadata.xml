@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZITR_IDM_INVOIC_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Idoc_Number"/>
+                </Key>
+                <Property Name="Idoc_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Idoc_Number" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Bil_To_Customer" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Bil_To_Customer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sales_Org" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Sales_Org" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WF_Status" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="WF_Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Invoice_Date" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Invoice_Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Document_Date" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Document_Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Invoice_Value" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Invoice_Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Billing_Type" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Billing_Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="nav_item" Relationship="ZITR_IDM_INVOIC_SRV.Ass_items" FromRole="FromRole_Ass_items" ToRole="ToRole_Ass_items"/>
+            </EntityType>
+            <EntityType Name="Matnr_details" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Idoc_Number"/>
+                </Key>
+                <Property Name="PO_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PO_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Item_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Item_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Material_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Material_Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Material_Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customer_Part_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Customer_Part_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Invoice_Quantity" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Invoice_Quantity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Unit_Of_Measure" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Unit_Of_Measure" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Invoice_Item_Value" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Invoice_Item_Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Plant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reference_Document" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Reference_Document" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Idoc_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Idoc_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Process_Idocs" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Idoc_Number"/>
+                </Key>
+                <Property Name="Idoc_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Idoc_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Total_Idocs" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Idoc_Number"/>
+                </Key>
+                <Property Name="Idoc_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Idoc_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Idoc_Status" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Idoc_Status" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Creation_Date" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Creation_Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Customer_Name" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Customer_Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Invoice_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Invoice_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WF_Status" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="WF_Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PO_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="PO_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Workflow" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Idoc_Number"/>
+                </Key>
+                <Property Name="Idoc_Number" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Idoc_Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Department" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Department" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Need_By_Date" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Need_By_Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="WF_Description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="WF_Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Response" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Response" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="Ass_items" sap:content-version="1">
+                <End Type="ZITR_IDM_INVOIC_SRV.Details" Multiplicity="1" Role="FromRole_Ass_items"/>
+                <End Type="ZITR_IDM_INVOIC_SRV.Matnr_details" Multiplicity="*" Role="ToRole_Ass_items"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Ass_items">
+                        <PropertyRef Name="Idoc_Number"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Ass_items">
+                        <PropertyRef Name="Idoc_Number"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZITR_IDM_INVOIC_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="DetailsSet" EntityType="ZITR_IDM_INVOIC_SRV.Details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Matnr_detailsSet" EntityType="ZITR_IDM_INVOIC_SRV.Matnr_details" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Process_IdocsSet" EntityType="ZITR_IDM_INVOIC_SRV.Process_Idocs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="Total_IdocsSet" EntityType="ZITR_IDM_INVOIC_SRV.Total_Idocs" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="WorkflowSet" EntityType="ZITR_IDM_INVOIC_SRV.Workflow" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="Ass_itemsSet" Association="ZITR_IDM_INVOIC_SRV.Ass_items" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="DetailsSet" Role="FromRole_Ass_items"/>
+                    <End EntitySet="Matnr_detailsSet" Role="ToRole_Ass_items"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://14.142.78.206:8000/sap/opu/odata/sap/ZITR_IDM_INVOIC_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://14.142.78.206:8000/sap/opu/odata/sap/ZITR_IDM_INVOIC_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
